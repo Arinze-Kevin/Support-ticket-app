@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const Container = styled.div`
     margin-top: 10em;
     background-color: red;
-
 `;
 
 const Div = styled.div`

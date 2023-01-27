@@ -69,76 +69,78 @@ const Hr = styled.hr`
 `;
 
 function NewTicket() {
-    const {user} = useSelector((state) => state.auth)
-    const { isLoading, isError, isSuccess, message } = useSelector((state) => state.tickets)
-    const [name] = useState(user.name)
-    const [email] = useState(user.email)
-    const [product, setProduct] = useState('iPhone')
-    const [description, setDescription] = useState('')
+   const { user } = useSelector((state) => state.auth)
+   const { isLoading, isError, isSuccess, message } = useSelector((state) => state.tickets)
+   const [name] = useState(user.name)
+   const [email] = useState(user.email)
+   const [product, setProduct] = useState('iPhone')
+   const [description, setDescription] = useState('')
 
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+   const dispatch = useDispatch()
+   const navigate = useNavigate()
 
-    useEffect(() => {
-        if (isError) {
-            toast.error(message)
-        }
+   useEffect(() => {
+      if (isError) {
+         toast.error(message)
+      }
 
-        if (isSuccess) {
-            dispatch(reset())
-            navigate('/tickets') 
-        }
+      if (isSuccess) {
+         dispatch(reset())
+         navigate('/tickets')
+      }
 
-        dispatch(reset())
-    }, [dispatch, isError, isSuccess, navigate, message])
+      dispatch(reset())
+   }, [dispatch, isError, isSuccess, navigate, message])
 
-    const onSubmit = (e) => {
-        e.preventDefault()
-        dispatch(createTicket({product, description}))
-    }
-
-    return (
-        <Container>
-            <BackButton url='/' />
-            <Section>
-                <Title>Create New Ticket</Title>
-                <Desc>Please fill out the form below</Desc>
-            </Section>
-            <Section>
-                <Div>
-                    <Label htmlFor='name'>Customer Name</Label> <Hr />
-                    <Input type='text' value={name} disabled /> 
-                </Div>
-                <Div>
-                    <Label htmlFor='email'>Customer Email</Label> <Hr />
-                    <Input type='text' value={email} disabled /> 
-                </Div>
-                <Form onSubmit={onSubmit}>
-                    <Label htmlFor='product' style={{marginLeft: '-3em'}}>Product</Label> <Hr />
-                    <Select 
-                       name="product" 
-                       id="product" 
-                       value={product} 
-                       onChange={(e) => setProduct(e.target.value)}
-                       >
-                         <option value='iPhone'>iPhone</option>
-                         <option value='Macbook'>Macbook</option>
-                         <option value='iPad'>iPad</option>
-                         <option value='iMac'>iMac</option>
-                    </Select>
-                    <Div style={{ marginTop: '0.7em' }}>
-                    <Label htmlFor='description' style={{ marginLeft: '3.5em' }}>Description of the issue</Label> <Hr />
-                    <Textarea name='description'
-                       placeholder='Description'
-                       value={description}  
-                       onChange={(e) => setDescription(e.target.value)} >
-                    </Textarea> 
-                </Div>
-                <Button>Submit</Button>
-                </Form>
-            </Section>
-        </Container>
-    )
+   const onSubmit = async(e) => {
+      e.preventDefault()
+      const response = await dispatch(createTicket({ product, description }))
+     console.log("response", response)
+   }
+  
+   
+   return (
+      <Container>
+         <BackButton url='/' />
+         <Section>
+            <Title>Create New Ticket</Title>
+            <Desc>Please fill out the form below</Desc>
+         </Section>
+         <Section>
+            <Div>
+               <Label htmlFor='name'>Customer Name</Label> <Hr />
+               <Input type='text' value={name} disabled />
+            </Div>
+            <Div>
+               <Label htmlFor='email'>Customer Email</Label> <Hr />
+               <Input type='text' value={email} disabled />
+            </Div>
+            <Form onSubmit={onSubmit}>
+               <Label htmlFor='product' style={{ marginLeft: '-3em' }}>Product</Label> <Hr />
+               <Select
+                  name="product"
+                  id="product"
+                  value={product}
+                  onChange={(e) => setProduct(e.target.value)}
+               >
+                  <option value='iPhone'>iPhone</option>
+                  <option value='Macbook'>Macbook</option>
+                  <option value='iPad'>iPad</option>
+                  <option value='iMac'>iMac</option>
+               </Select>
+               <Div style={{ marginTop: '0.7em' }}>
+                  <Label htmlFor='description' style={{ marginLeft: '3.5em' }}>Description of the issue</Label> <Hr />
+                  <Textarea name='description'
+                     placeholder='Description'
+                     value={description}
+                     onChange={(e) => setDescription(e.target.value)} >
+                  </Textarea>
+               </Div>
+               <Button>Submit</Button>
+            </Form>
+         </Section>
+      </Container>
+   )
 }
 
 export default NewTicket

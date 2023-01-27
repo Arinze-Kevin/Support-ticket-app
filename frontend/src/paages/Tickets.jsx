@@ -11,7 +11,6 @@ const Container = styled.div`
 `;
 
 const Section = styled.div`
-
 `;
 
 const Title = styled.div`
@@ -26,13 +25,12 @@ const Desc = styled.div`
    background-color: gray;
    font-size: 1.6em;
    margin-top: 1em;
-
 `;
 
 function Tickets() {
-    const { tickets, isLoading, isSuccess } = useSelector((state) => state.tickets)
+    const { tickets, isLoading, isSuccess } = useSelector((state) => state.tickets.tickets)
     const dispatch = useDispatch()
-  
+  console.log("tickets", tickets)
 
     // useEffect(() => {
     //     dispatch(getTickets())
@@ -72,8 +70,8 @@ function Tickets() {
                 <TicketItem key={ticket._id} ticket={ticket} />
               )) : null } */}
             </Section>
-            {tickets.length > 1 ? tickets.map((ticket)  => (
-                <TicketItem key={ticket._id} ticket={ticket._id} />
+            {tickets?.length > 0 ? tickets?.map((ticket)  => (
+                <TicketItem key={ticket._id} ticket={ticket} />
               )) : null }
         </Container>
         
