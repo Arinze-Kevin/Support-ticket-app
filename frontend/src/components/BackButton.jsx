@@ -15,7 +15,7 @@ const Div = styled.div`
 const BackButton = ({ url }) => {
     return (
         <Div>
-            <Link to={url} >
+            <Link style={{textDecoration: 'none'}} to={url} >
                <FaArrowCircleLeft /> Go back
             </Link>
         </Div>

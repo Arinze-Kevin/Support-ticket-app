@@ -39,19 +39,19 @@ function Header() {
     return (
         <Container>
             <Div>
-                <Link to='/'>Support Desk</Link> 
+                <Link style={{textDecoration: 'none', color: 'black', fontWeight: 900, fontSize: '1.5em'}} to='/'>Support Desk</Link> 
             </Div>
             <Ul>
                 {user ? (<div>
                     <button onClick={onLogout}> <FaSignOutAlt /> Logout </button>
                 </div>) : (<>
                 <div>
-                    <Link to='/login'>
+                    <Link style={{textDecoration: 'none'}} to='/login'>
                         <FaSignInAlt /> Login
                     </Link>
                 </div>
                 <div>
-                    <Link to='/register'>
+                    <Link style={{textDecoration: 'none'}} to='/register'>
                         <FaUser /> Register
                     </Link>
                 </div>

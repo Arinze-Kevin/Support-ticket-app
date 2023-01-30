@@ -61,14 +61,11 @@ function Tickets() {
             <Title>Tickets</Title>
             <Section>
               <Desc>
-                <div>Date</div>
-                <div>Product</div>
-                <div>Status</div>
+                <div style={{ marginLeft: '3em' }}>Date</div>
+                <div style={{ marginLeft: '-1.5em' }}>Product</div>
+                <div style={{ marginLeft: '-3em' }}>Status</div>
                 <div></div>
               </Desc>
-              {/* {tickets.length > 1 ? tickets.map((ticket)  => (
-                <TicketItem key={ticket._id} ticket={ticket} />
-              )) : null } */}
             </Section>
             {tickets?.length > 0 ? tickets?.map((ticket)  => (
                 <TicketItem key={ticket._id} ticket={ticket} />

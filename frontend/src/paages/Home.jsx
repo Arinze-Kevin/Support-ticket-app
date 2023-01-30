@@ -27,7 +27,6 @@ const Div = styled.div`
    margin-left: 25em;
    margin-top: 4em;
    border: 10px solid #48494b;
-//    text-align: center;
     letter-spacing: 3px;
     background-color: #48494b;
     border-radius: 20%;
@@ -40,11 +39,8 @@ const Div1 = styled.div`
    margin-left: 25em;
    margin-top: 2em;
    border: 10px solid black;
-//    text-align: center;
     letter-spacing: 3px;
-    // margin-top: 10px;
     background-color: black;
-    // color: red;
     border-radius: 20%;
     cursor: pointer;
 `;
@@ -58,13 +54,13 @@ function Home() {
             </Section>
 
             <Div>
-                <Link to='/new-ticket'>
+                <Link style={{textDecoration: 'none', color: 'white'}} to='/new-ticket'>
                    <FaQuestionCircle /> Create New Ticket
                 </Link>
             </Div>
 
             <Div1>
-                <Link to='/tickets'>
+                <Link style={{textDecoration: 'none'}} to='/tickets'>
                    <FaTicketAlt /> View My Ticket
                 </Link>
             </Div1>

@@ -24,6 +24,9 @@
     "mongoose": "^6.8.3",
     "validator": "^13.7.0"
   },
+  "engines": {
+    "node": "16.19.0"
+  },  
   "devDependencies": {
     "@babel/cli": "^7.19.3",
     "@babel/core": "^7.20.2",
