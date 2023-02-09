@@ -29,7 +29,7 @@ const Hr = styled.hr`
 `;
 
 const Div3 = styled.div`
-${mobile({ marginRight:'4em', backgroundColor: 'black', padding: '5px'})}
+${mobile({ marginRight:'4em', marginLeft: '-1.5em', marginTop: '-0.5em', padding: '7px'})}
 `;
 
 const Div2 = styled.div`
@@ -66,12 +66,12 @@ function Header() {
                     <Button onClick={onLogout}> <FaSignOutAlt /> Logout </Button>
                 </div>) : (<>
                 <Div2>
-                    <Link style={{textDecoration: 'none'}} to='/login'>
+                    <Link style={{textDecoration: 'none', color: 'black', fontWeight: 900, marginLeft: '-1em', fontSize: '1.2em'}} to='/login'>
                         <FaSignInAlt /> Login
                     </Link>
                 </Div2>
                 <Div3>
-                    <Link style={{textDecoration: 'none'}} to='/register'>
+                    <Link style={{textDecoration: 'none', color: 'black', fontWeight: 900, fontSize: '1.2em'}} to='/register'>
                         <FaUser /> Register
                     </Link>
                 </Div3>

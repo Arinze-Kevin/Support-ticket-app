@@ -71,7 +71,7 @@ const H5 = styled.h5`
 
 const Button2 = styled.button`
     display: none;
-    ${mobile({ marginLeft: '9em', display: 'block', width: '30%' })}
+    ${mobile({ marginLeft: '13em', display: 'block', width: '30%' })}
 `;
 
 function Register() {
