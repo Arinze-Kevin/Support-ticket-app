@@ -125,12 +125,13 @@ function Login() {
                     </Div>
                     <Div>
                         <Input
-                          type='text'
+                        //   type='text'
                           id='password'
                           name='password'
                           value={password}
                           onChange={onChange}
                           placeholder='Enter password'
+                          type='password'
                           required
                         />  
                     </Div>

@@ -1,36 +1,38 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { FaQuestionCircle, FaTicketAlt } from 'react-icons/fa'
+import { mobile } from '../responsive';
 
 const Container = styled.div`
    text-align: center;
    margin-top: 5em;
-`;
-
+   `;
+   
 const Section = styled.section`
 
 `;
 
 const Title = styled.h1`
-   font-weight: 900;
-   font-size: 2.3em;
+font-weight: 900;
+font-size: 2.3em;
 `;
 
 const Desc = styled.p`
-   font-weight: 900;
-   font-size: 1.5em;
+font-weight: 900;
+font-size: 1.5em;
 `;
 
 const Div = styled.div`
-   padding: 10px;
-   width: 30%;
-   margin-left: 25em;
-   margin-top: 4em;
-   border: 10px solid #48494b;
-    letter-spacing: 3px;
-    background-color: #48494b;
-    border-radius: 20%;
-    cursor: pointer;
+padding: 10px;
+width: 30%;
+margin-left: 25em;
+margin-top: 4em;
+border: 10px solid #48494b;
+letter-spacing: 3px;
+background-color: #48494b;
+border-radius: 20%;
+cursor: pointer;
+${mobile({ marginLeft: '0em', width: '90%' })}
 `;
 
 const Div1 = styled.div`
@@ -43,6 +45,7 @@ const Div1 = styled.div`
     background-color: black;
     border-radius: 20%;
     cursor: pointer;
+    ${mobile({ marginLeft: '0em', width: '90%' })}
 `;
 
 function Home() {
@@ -54,7 +57,7 @@ function Home() {
             </Section>
 
             <Div>
-                <Link style={{textDecoration: 'none', color: 'white'}} to='/new-ticket'>
+                <Link style={{textDecoration: 'none', color: 'white'}} to='/new-ticket' onClick="window.location.reload()">
                    <FaQuestionCircle /> Create New Ticket
                 </Link>
             </Div>

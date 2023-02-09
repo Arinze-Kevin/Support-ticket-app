@@ -142,7 +142,7 @@ function Register() {
                     </Div>
                     <Div>
                         <Input
-                          type='text'
+                          type='password'
                           id='password'
                           name='password'
                           value={password}
@@ -153,7 +153,7 @@ function Register() {
                     </Div>
                     <Div>
                         <Input
-                          type='text'
+                          type='password'
                           id='password2'
                           name='password2'
                           value={password2}

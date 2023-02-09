@@ -53,17 +53,17 @@ function Ticket() {
             <header>
                 <BackButton url='/tickets' />
                 <h2>
-                    Ticket ID: {ticket?.updatedTicket?._id}
-                    <span>{ticket?.status}</span>
+                    Ticket ID: {ticket?.ticket?._id}
+                    <span>{ticket?.ticket?.status}</span>
                 </h2>
                 <h3>
-                    Date Submitted: {new Date(ticket?.updatedTicket?.createdAt).toLocaleString('en-US')}
+                    Date Submitted: {new Date(ticket?.ticket?.createdAt).toLocaleString('en-US')}
                 </h3>
-                <h3>Product: {ticket?.updatedTicket?.product}</h3>
+                <h3>Product: {ticket?.ticket?.product}</h3>
                 <hr />
                 <Div>
                     <h3>Description of Issue</h3>
-                    <p>{ticket?.updatedTicket?.description}</p>
+                    <p>{ticket?.ticket?.description}</p>
                 </Div>
             </header>
 

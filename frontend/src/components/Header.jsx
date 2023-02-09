@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout, reset } from '../features/auth/authSlice'
+import { mobile } from '../responsive'
 
 const Container = styled.header`
    margin: 20px;
@@ -23,6 +24,7 @@ const Ul = styled.ul`
    width: 11em;
    margin-left: 62em;
    margin-top: -1.1em;
+   ${mobile({ marginLeft: '13em', marginTop: '-1.5em'})}
 `;
 
 function Header() {

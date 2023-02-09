@@ -10,8 +10,8 @@ const initialState = {
     message: ''
 }
 
-// Get User Ticket
-export const getTicket = createAsyncThunk('tickets/close', async (ticketId, thunkAPI) => {
+// Close User Ticket
+export const closeTicket = createAsyncThunk('tickets/close', async (ticketId, thunkAPI) => {
     try {
         const token = thunkAPI.getState().auth.user.token
 
@@ -23,8 +23,8 @@ export const getTicket = createAsyncThunk('tickets/close', async (ticketId, thun
     }
 })
 
-// Close User Ticket
-export const closeTicket = createAsyncThunk('tickets/get', async (ticketId, thunkAPI) => {
+// Get User Ticket
+export const getTicket = createAsyncThunk('tickets/get', async (ticketId, thunkAPI) => {
   try {
       const token = thunkAPI.getState().auth.user.token
 
