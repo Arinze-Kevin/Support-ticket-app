@@ -28,6 +28,14 @@ const Hr = styled.hr`
    width: 110%;
 `;
 
+const Div3 = styled.div`
+${mobile({ marginRight:'4em', backgroundColor: 'black', padding: '5px'})}
+`;
+
+const Div2 = styled.div`
+${mobile({ display:'none'})}
+`;
+
 const Ul = styled.ul`
    display: flex;
    justify-content: space-between;
@@ -57,16 +65,16 @@ function Header() {
                 {user ? (<div>
                     <Button onClick={onLogout}> <FaSignOutAlt /> Logout </Button>
                 </div>) : (<>
-                <div>
+                <Div2>
                     <Link style={{textDecoration: 'none'}} to='/login'>
                         <FaSignInAlt /> Login
                     </Link>
-                </div>
-                <div>
+                </Div2>
+                <Div3>
                     <Link style={{textDecoration: 'none'}} to='/register'>
                         <FaUser /> Register
                     </Link>
-                </div>
+                </Div3>
                 </>)}
             </Ul>
         </Container>

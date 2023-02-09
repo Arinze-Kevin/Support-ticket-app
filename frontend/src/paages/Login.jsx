@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { FaSignInAlt } from 'react-icons/fa'
 import { useSelector, useDispatch  } from 'react-redux'
 import { login, reset } from '../features/auth/authSlice'
+import { mobile } from '../responsive'
 
 const Container = styled.div`
     text-align: center;
@@ -41,7 +42,8 @@ const Input = styled.input`
    width: 30%;
    padding: 10px;
    border: 10px solid #c7c6c1;
-   border-radius: 10%;
+   border-radius: 20%;
+   ${mobile({width: '70%' })}
 `;
 
 const Button = styled.button`
@@ -53,6 +55,7 @@ const Button = styled.button`
     color: white;
     border-radius: 20%;
     cursor: pointer;
+    ${mobile({width: '70%' })}
 `;
 
 function Login() {
