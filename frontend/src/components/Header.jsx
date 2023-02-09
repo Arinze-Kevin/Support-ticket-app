@@ -14,6 +14,16 @@ const Div = styled.div`
 
 `;
 
+const Button = styled.button`
+   margin-top: -1em;
+   padding: 10px; 
+   width: 170%;
+   background-color: black;
+   color: white;
+   ${mobile({ marginLeft:'-1em', width: '7em', height: '6vh'})}
+
+`;
+
 const Hr = styled.hr`
    width: 110%;
 `;
@@ -24,7 +34,7 @@ const Ul = styled.ul`
    width: 11em;
    margin-left: 62em;
    margin-top: -1.1em;
-   ${mobile({ marginLeft: '13em', marginTop: '-1.5em'})}
+   ${mobile({ marginLeft: '13em', paddig: '20px', marginTop: '-1.5em'})}
 `;
 
 function Header() {
@@ -45,7 +55,7 @@ function Header() {
             </Div>
             <Ul>
                 {user ? (<div>
-                    <button onClick={onLogout}> <FaSignOutAlt /> Logout </button>
+                    <Button onClick={onLogout}> <FaSignOutAlt /> Logout </Button>
                 </div>) : (<>
                 <div>
                     <Link style={{textDecoration: 'none'}} to='/login'>

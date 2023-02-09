@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
 display: flex;
@@ -14,6 +15,7 @@ const Button = styled.div`
   border: 2px solid black;
   padding: 0px 20px;
   margin-right: 2em;
+  ${mobile({ marginRight: '-0.3em', width: '5%'})}
 `;
 
 const Div = styled.div`
@@ -22,6 +24,7 @@ const Div = styled.div`
    background-color: black;
    color: gray;
    padding: 0px 10px;
+   ${mobile({ marginLeft: '1.5em'})}
 
 `;
 

@@ -32,7 +32,7 @@ letter-spacing: 3px;
 background-color: #48494b;
 border-radius: 20%;
 cursor: pointer;
-${mobile({ marginLeft: '0em', width: '90%' })}
+${mobile({ marginLeft: '1.2em', width: '80%' })}
 `;
 
 const Div1 = styled.div`
@@ -45,7 +45,7 @@ const Div1 = styled.div`
     background-color: black;
     border-radius: 20%;
     cursor: pointer;
-    ${mobile({ marginLeft: '0em', width: '90%' })}
+    ${mobile({ marginLeft: '1.2em', width: '80%' })}
 `;
 
 function Home() {

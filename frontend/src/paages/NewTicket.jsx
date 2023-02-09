@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { createTicket, reset } from '../features/tickets/ticketSlice';
 import BackButton from '../components/BackButton';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
    text-align: center;
@@ -33,6 +34,8 @@ const Input = styled.input`
    width: 30%;
    padding: 10px;
    margin-top: -2em;
+   ${mobile({width: '22.4em'})}
+
 `;
 
 const Button = styled.button`
@@ -42,18 +45,21 @@ const Button = styled.button`
    background-color: black;
    color: white;
    cursor: pointer;
+   ${mobile({ width: '18em'})}
 `;
 
 const Textarea = styled.textarea`
    width: 30%;
    padding: 10px;
    margin-top: -0.7em;
+   ${mobile({ width: '21em'})}
 `;
 
 const Select = styled.select`
    width: 31%;
    padding: 10px;
    margin-top: -1em;
+   ${mobile({ width: '24em'})}
 `;
 
 const Form = styled.form`
@@ -62,6 +68,14 @@ const Form = styled.form`
 
 const Label = styled.label`
    margin-right: 18em;
+   ${mobile({ marginRight: '14em'})}
+
+`;
+
+const Label2 = styled.label`
+   margin-right: 18em;
+   ${mobile({ marginRight: '4em'})}
+
 `;
 
 const Hr = styled.hr`
@@ -129,7 +143,7 @@ function NewTicket() {
                   <option value='iMac'>iMac</option>
                </Select>
                <Div style={{ marginTop: '0.7em' }}>
-                  <Label htmlFor='description' style={{ marginLeft: '3.5em' }}>Description of the issue</Label> <Hr />
+                  <Label2 htmlFor='description' style={{ marginLeft: '3.5em' }}>Description of the issue</Label2> <Hr />
                   <Textarea name='description'
                      placeholder='Description'
                      value={description}

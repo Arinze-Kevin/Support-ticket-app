@@ -4,10 +4,12 @@ import { getTickets, reset } from "../features/tickets/ticketSlice";
 import BackButton from "../components/BackButton";
 import TicketItem from "../components/TicketItem";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
    text-align: center;
    margin-top: -1em;
+   ${mobile({ fontSize: '8px', width: '95%', marginLeft: '1em'})}
 `;
 
 const Section = styled.div`
@@ -32,20 +34,10 @@ function Tickets() {
     const dispatch = useDispatch()
   console.log("tickets", tickets)
 
-    // useEffect(() => {
-    //     dispatch(getTickets())
-    // }, [dispatch])
-
-    // console.log(tickets)
-
-    // if (isLoading) {
-    //     return <h3>Loading...</h3>
-    // }
 
     useEffect(() => {
         return () => {
             if (isSuccess) {
-                // dispatch(reset())
             }
         }
     }, [dispatch, isSuccess])
